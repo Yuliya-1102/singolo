@@ -1,1 +1,1 @@
-https://Yuliya-1102.github.io/singolo/singolo.html
+https://Yuliya-1102.github.io/singolo/index.html
