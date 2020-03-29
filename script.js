@@ -169,7 +169,8 @@ event.preventDefault();
 
 let portfolioFilter = document.querySelector('.portfolio__filter');
 let portfolioElem = document.querySelector('.portfolio_elem');
-let portfolioImg = document.querySelectorAll('#portfolio_border img');
+let imgDiv = document.querySelector('.portfolio_elem div');
+let portfolioImg = document.querySelectorAll('#portfolio_border div');
 let portfolioImgOne = document.querySelector('#portfolio_border img');
 
 // 1. картинки внесли в массив
@@ -196,6 +197,7 @@ function getRandomInt(min, max) {
 let newArr = shuffle(arr);
 
 // 4. разместили новый массив на стр.
+
         for(let j=0; j < newArr.length; j++){
 	portfolioElem.appendChild(newArr[j]); 
     };
@@ -224,24 +226,42 @@ const formaSubmit = (event) => {
 		windowsSubject.innerHTML = "Тема: " +  subject.value;
 		windowsDescribew.innerHTML = "Описание: " +  textarea.value;
 	};
-
-	
-	
-	
-
 }
 
 document.querySelector('.forma__contact-submit').addEventListener('click', formaSubmit);
 
+// ФУНКЦИЯ НА ВАЛИДНОСТЬ
+function ValidMail(email) {
+    let re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    let myMail = document.getElementById('email').value;
+    console.log(myMail);
+    let valid = re.test(myMail);
+    if (valid) {
+    	return myMail;
+    }
+    // if (valid == '') {
+    // 	return document.getElementById('email').value = 'введите email';
+    // }
+    else {
+       	return document.getElementById('email').value = 'неверно введен email';		
+    }
+    
+}
+
+document.getElementById('email').addEventListener('blur', ValidMail);
+
+
+
 // ФУНКЦИЯ ДЛЯ ОКНА
 const windowSubmit = (event) => {
+	// event.preventDefault();
     let elemForma = document.querySelector('.subject');
 
 
 	const subject = document.querySelector('.subject');
 	const textarea = document.querySelector('.textarea');
 	const name = document.querySelector('.name');
-	const email = document.querySelector('.email');
+	const email = getElementById('email');
 	event.preventDefault();
 	const windows = document.querySelector('.window');
 	windows.style.display = 'none';
@@ -280,3 +300,31 @@ document.querySelector('.window-submit').addEventListener('click', windowSubmit)
 // 	});
 	
 // };
+
+
+
+
+// BURGER
+
+function burgerRotate(event) {
+	const burger = document.querySelector('.burger');
+	const menu = document.querySelector('.menu');
+	const logo = document.querySelector('.header__logo__navigation');
+
+	
+	menu.style.display = 'block'
+}
+document.querySelector('.burger').addEventListener('click', burgerRotate);
+
+
+ function burgerRotateNone(event) {
+	const menu = document.querySelector('.menu');
+		
+	menu.style.display = 'none'
+}
+document.querySelector('.burger-active').addEventListener('click', burgerRotateNone);
+
+
+
+
+

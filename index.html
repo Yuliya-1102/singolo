@@ -6,7 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">  -->
+
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style@media.css">
 </head>
 <body>
 	<header class="header">
@@ -19,12 +21,36 @@
 						<li><a href="#services">SERVICES</a></li>
 						<li><a href="#portfolio">PORTFOLIO</a></li>
 						<li><a href="#about">ABOUT</a></li>
-						<!-- <li>CONTACT</li> -->
+						<li><a href="#contact">CONTACT</a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
+
+		<div class="burger">
+			<span class="burger-span"></span>
+		</div>
 	</header>
+
+	<section class="menu">
+		<div class="menu__relative">
+			<div class="menu__wrapper">
+				<div class="logo menu__logo">SINGOLO<span>*</span></div>
+				<nav class="menu__navigation">
+					<ul>
+						<li class="navigation-nav"><a href="#home">HOME</a></li>
+						<li><a href="#services">SERVICES</a></li>
+						<li><a href="#portfolio">PORTFOLIO</a></li>
+						<li><a href="#about">ABOUT</a></li>
+						<li><a href="#contact">CONTACT</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="burger burger-active">
+				<span class="burger-span"></span>
+			</div>
+		</div>
+	</section>
 
 
 	<div  id="home" class="devices slieder_fon color_rose" id="color_fon">
@@ -32,11 +58,11 @@
 				<div class="devices__block">
 					<div class="devices--item slide visible_slide" id="slide_1">
 						<div class="devices--height slide_1">
-							<div class="devices_position--display">
+							<div class="devices_position--display devices-width-vertical">
 								<img class="devices__phone devices__phone_vertical" src="assets/iphone-vertical.png" alt="phone">
 							<div class="devices__display"></div>
 							</div>
-							<div class="devices_position--display">
+							<div class="devices_position--display devices-width-horizontal">
 								<img class="devices__phone devices__phone_horizontal" src="assets/iphone-horizontal.png" alt="phone">
 								<div class="devices__display_horisontal"></div>
 							</div>
@@ -122,19 +148,18 @@
 				<a href="#" class="portfolio__filter-button">Artwork</a>
 			</div>
 			<div class="portfolio__images portfolio_elem" id="portfolio_border">
-				<img src="assets/progect-12.jpg" alt="Portfolio">
-				<img src="assets/progect-10.jpg" alt="Portfolio">
-				<img src="assets/progect-6.jpg" alt="Portfolio">
-				<img src="assets/progect-3.jpg" alt="Portfolio">
-				<img src="assets/progect-9.jpg" alt="Portfolio">
-				<img src="assets/progect-8.jpg" alt="Portfolio">
-				<img src="assets/progect-5.jpg" alt="Portfolio">
-				<img src="assets/progect-2.jpg" alt="Portfolio">
-				<img src="assets/progect-11.jpg" alt="Portfolio">
-				<img src="assets/progect-7.jpg" alt="Portfolio">
-				<img src="assets/progect-4.jpg" alt="Portfolio">
-				<img src="assets/progect.jpg" alt="Portfolio">
-				
+				<div class="imgdiv"><img src="assets/progect-12.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-10.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-6.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-3.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-9.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-8.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-5.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-2.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-11.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-7.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect-4.jpg" alt="Portfolio"></div>
+				<div class="imgdiv"><img src="assets/progect.jpg" alt="Portfolio"></div>
 			</div>
 			
 		</div>
@@ -183,7 +208,7 @@
 					</div>
 					<h4 class="worker__name">Scolara Visari</h4>
 					<p class="worker__content">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
-					<div class="worker__icon">
+					<div class="worker__icon worker-last-icon">
 						<a href=""><img src="assets/facebook.png" alt=""></a>
 						<a href=""><img src="assets/google.png" alt=""></a>
 						<a href=""><img src="assets/tvitter.png" alt=""></a>
@@ -197,7 +222,7 @@
 	
 	<!-- singolo3 -->
 	
-	<section class="contact">
+	<section class="contact" id="contact">
 		<div class="wrapper">
 			<h2 class="portfolio__title contact__title">Get a Quote</h2>
 			<p class="portfolio__content contact__content">
@@ -207,7 +232,8 @@
 				<form class="forma">
 					<div class="contact__forma">
 						<input class="name" type="text" name="name" required placeholder="Name (Required)">
-						<input class="email" type="email" name="email" class="email" required placeholder="Email (Required)">
+						<input id="email" type="email" name="email" required placeholder="Email (Required)">
+						<span id="valid"></span>
 						<input type="text" name="subject" class="subject" placeholder="Subject">
 						<textarea class="textarea" name="message" placeholder="Describe your project in detail..."></textarea>
 

@@ -33,14 +33,14 @@ a{
 	text-decoration: none;
 }
 li {
-	list-style-type: none;
+	/*list-style-type: none;*/
 }
 
 /*HEADER*/
 
 .wrapper {
-	max-width: 960px;
-	padding: 0 10px;
+	max-width: 1000px;
+	padding: 0 40px;
 	margin: 0 auto;
 
 }
@@ -79,10 +79,12 @@ li {
 
 .navigation li {
 	margin-left: 27px;
-
+	padding-left: 5px;
 	font-weight: 700;
 }
-
+.navigation li:first-child {
+	list-style-type: none;
+}
 /*.navigation {
 	color: #f06c64;
 	cursor: pointer;
@@ -124,18 +126,13 @@ li {
 
 .devices__block {
 	height: 100%;
-	margin: 0 72px;
-	position: relative;
-	max-width: 800px;
 	height: 600px;
+	margin: 55px 50px;
+	position: relative;
+	width: 800px;
 	overflow: hidden;
 }
 
-/*.devices--one {
-	position: relative;
-
-
-}*/
 .devices--item {
 	height: 100%;
 	width: 100%;
@@ -143,15 +140,15 @@ li {
 	visibility: visible;
 }
 .devices--height {
-	width: 100%;
+	/*width: 100%;
 	left: 50%;
 	transform: translate(-50%, 0%);
-	position: absolute;
+	position: absolute;*/
 	
 }
 .devices--two {
 	text-align: center;
-	top: 9%;
+	top: 0%;
 	width: 100%;
 	position: absolute;
 }
@@ -194,13 +191,14 @@ to {right: 0%;}
 	justify-content: space-between;
 	align-items: center;
 }
-.devices_position--display {
+.devices-width-vertical{
 	position: relative;
+	/*max-width: 240px;
+	height: auto;*/
 }
-
-.devices__phone_vertical {
-	padding: 54px 0 58px;
-}
+/*.devices__phone_vertical {
+	padding: 0px 0 58px;
+}*/
 .devices__phone_horizontal {
 	top: 150%;
 }
@@ -213,7 +211,7 @@ to {right: 0%;}
 	width: 100%;
 	color: transparent;
 	font-size: 0;
-	top: 50%;
+	top: 40%;
 	transform: translateY(-50%);
 }
 .button a{
@@ -229,7 +227,7 @@ to {right: 0%;}
 	border-left: 5px solid #ca4549;
 }
 .devices__button_prev {
-	right: 13px;
+	right: 90px;
 	transform: rotate(135deg);
 }
 
@@ -261,7 +259,7 @@ to {right: 0%;}
 
 	position: absolute;
 	right: 89px;
-	top: 44%;
+	top: 38%;
 	transform: translateY(-50%);
 	border-radius: 5px;
 }
@@ -391,15 +389,19 @@ h2 {
 
 .portfolio__images {
 	display: flex;
-	justify-content: space-between;
 	flex-wrap: wrap;
-	max-height: 621px;
-	overflow: hidden;
-	
+	margin: -0.8%;
+	margin-bottom: 67px;
+
+}
+.portfolio__images div {
+	width: 23.4%;
+	margin: 0.8%;
 }
 
 .portfolio__images img {
-	margin-bottom: 20px;
+	width: 100%;
+	height: auto;
 }
 
 
@@ -527,15 +529,15 @@ letter-spacing: -0.3px;
 }
 
 .forma__contact-submit {
-	text-align: right;
+	text-align: left;
 }
 
 .forma__contact-submit input{
 	padding: 5px;
 	font-family: Lato;
-	background-color: #d6564f;
+	background-color: #FBC65F;;
 	
-	color: #f48c8f;
+	color: #886A30;
 	font-size: 18px;
 	
 	border: none;
@@ -658,4 +660,97 @@ letter-spacing: -0.3px;
 
 .nav_active {
 	color: #f06c64; 
+}
+
+
+
+.menu {
+	display: none;
+	width: 278px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #2D303A;
+	box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4); 
+	height: 100vh;
+	min-height: 390px;
+	color: #FFFFFF;
+	/*transition: display 0.4s linear*/
+	z-index: 1000;
+}
+.menu__relative {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin-left: 71px;
+}
+.menu__logor {
+	color: #f06c64;
+}
+.menu__wrapper {
+	margin-top: 24px;
+}
+.menu__navigation {
+	position: absolute;
+	top: 30%;
+	left: 0%;
+}
+.menu__navigation ul {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+}
+.menu__navigation ul li{
+	list-style-type: none;
+	margin-bottom: 27px;
+}
+.menu__navigation ul .navigation-nav {
+	color: #f06c64;
+
+}
+
+/*burger*/
+
+.burger {
+	display: none;
+	position: absolute;
+	top: 28px;
+	left: 20px;
+	width: 25px;
+	height: 17.6px;
+	z-index: 20;
+	cursor: pointer;
+	color: transparent;
+	border: 0;
+	background: none;
+}
+.burger-span {
+	display: block;
+	width: 100%;
+	height: 2.4px;
+	background-color: #fff;
+
+}
+.burger::after,
+.burger::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2.4px;
+	background-color: #fff;
+	transition: transform.2s linear;
+	cursor: pointer;
+}
+.burger::before {
+	top: 8px;
+}
+.burger::after {
+	bottom: 0px;
+}
+
+
+.burger-active {
+	top: 3px;
+    left: -50px;
+transform: rotate(90deg);
 }
